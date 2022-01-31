@@ -6,14 +6,13 @@ Thanks Lars for his hard work, but he is no longer developing the project and I 
 
 # Introducing CREST2 - also known as the CARS REST API 2#
 
-This project provides a way for developers to have access to the data provided by Project CARS 2 and Automobilista 2 Shared Memory in a more portable and accessible format than a mapped memory file.
+This project provides a way for developers to have access to the data provided by Automobilista 2 Shared Memory in a more portable and accessible format than a mapped memory file.
 
 It's a windows native command line application (written in C++ and a fair bit of plain old C) that will act as a local web/application server and serve the data via JSON over HTTP by accessing a URL.
 
 Any web browser or HTTP client will be able to access the data both locally and inside the local network, which facilitates easy add-on development in any language (e.g. JavaScript, Java, C, C++, C#, etc. etc.) and platform (e.g. web browser, iOS, Android, Windows Phone or other) with a vast array of client REST libraries at your disposal.\
-If you want to see what you can do with it, then look here: [Project CARS Dedicated Server live view (also supports CREST2)](https://github.com/eckhchri/pcars-ds-liveview/blob/master/README.md)
+If you want to see what you can do with it, then look here: [Liveview (also supports CREST2)](https://github.com/eckhchri/pcars-ds-liveview/blob/master/README.md)
 
-* See https://www.projectcarsgame.com/ for more info on Project CARS.
 * Latest binary download is always available at https://drive.google.com/drive/folders/1zx12hGJttkTa0aG1jIO9AZ28VM7cDj-J
 
 # Running CREST2
@@ -35,9 +34,9 @@ Readme.txt		- Basic info how to use it
 4. If Windows complains about missing DLLs (e.g. MSVCR120.DLL or similar), please download and install the Visual C++ Redistributable Packages for Visual Studio 2019 from https://www.visualstudio.com/de/downloads/ (vcredist_x86.exe, scroll down to "Other Tools and Frameworks"), then start again.
 5. Console will show a notification about the server being up and running and display port and URL information.
 
-# Connecting to Project CARS 2 or Automobilista 2
+# Connecting to Automobilista 2
 
-1. Start Project CARS 2 or Automobilista 2.
+1. Start Automobilista 2.
 2. Enable Shared Memory "Project CARS2" mode in the settings
 3. Open up a browser (Chrome for best results) and go to http://localhost:8180/crest2/v1/api or for better readability to http://localhost:8180/crest2/v1/api?formatted=true
 4. Profit! F5/Refresh until you drop!
