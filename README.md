@@ -13,11 +13,11 @@ It's a windows native command line application (written in C++ and a fair bit of
 Any web browser or HTTP client will be able to access the data both locally and inside the local network, which facilitates easy add-on development in any language (e.g. JavaScript, Java, C, C++, C#, etc. etc.) and platform (e.g. web browser, iOS, Android, Windows Phone or other) with a vast array of client REST libraries at your disposal.\
 If you want to see what you can do with it, then look here: [Liveview (also supports CREST2)](https://github.com/eckhchri/pcars-ds-liveview/blob/master/README.md)
 
-* Latest binary download is always available at https://drive.google.com/drive/folders/1zx12hGJttkTa0aG1jIO9AZ28VM7cDj-J
+* Latest binary download is always available at https://drive.google.com/drive/folders/1dR40S7Q-3xJhEr1C8QFEd87Hs8lpV62s
 
 # Running CREST2
 
-1. Download the zip archive from https://drive.google.com/drive/folders/1zx12hGJttkTa0aG1jIO9AZ28VM7cDj-J and extract it, or build it yourself -> look at the topic [Building from source](#building-from-source).  
+1. Download the zip archive from https://drive.google.com/drive/folders/1dR40S7Q-3xJhEr1C8QFEd87Hs8lpV62s and extract it, or build it yourself -> look at the topic [Building from source](#building-from-source).  
 The archive includes the following relevant files:
 ```
 CREST2.exe		- Binary
