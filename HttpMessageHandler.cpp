@@ -10,8 +10,8 @@
 
 // Constants
 #define MAP_OBJECT_NAME "$pcars2$"
-#define HTTP_RESPONSE_503 "{\r\n  \"status\": \"503 Service unavailable, is PCARS2 or AMS2 running and is Shared Memory enabled?\"\r\n}"
-#define HTTP_RESPONSE_409 "{\r\n  \"status\": \"409 Conflict, are CREST and PCARS2 or AMS2 both at the latest version?\"\r\n}"
+#define HTTP_RESPONSE_503 "{\r\n  \"status\": \"503 Service unavailable, is AMS2 running and is Shared Memory enabled?\"\r\n}"
+#define HTTP_RESPONSE_409 "{\r\n  \"status\": \"409 Conflict, are CREST2 and AMS2 both at the latest version?\"\r\n}"
 #define GZIP_THRESHOLD 128
 
 static SharedMemoryRenderer sharedMemoryRenderer = SharedMemoryRenderer();
@@ -158,7 +158,7 @@ void processSharedMemoryData(struct mg_connection *nc, const SharedMemory* share
 	if (sharedData->mVersion != SHARED_MEMORY_VERSION)	{
 		// build conflict response
 		sendConflict(nc);
-		printf("Data version mismatch, please make sure that your pCARS version matches your CREST version\n    Expected: v%d, Current: v%d\n", SHARED_MEMORY_VERSION, sharedData->mVersion);
+		printf("Data version mismatch, please make sure that your AMS2 version matches your CREST2 version\n    Expected: v%d, Current: v%d\n", SHARED_MEMORY_VERSION, sharedData->mVersion);
 	}else{
 		renderResponse(nc, sharedData, hm);
 	}

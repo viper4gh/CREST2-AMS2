@@ -8,7 +8,7 @@
 #include <sstream>
 
 // Configuration properties
-#define CREST2_VERSION "v0.4.2"
+#define CREST2_VERSION "v0.4.3"
 #define POLL_TIME_IN_MILLIS 17	
 // fossa definition: maximum number of milliseconds to sleep for ns_mgr_poll/ fossa calls the winsock select() function with it, where it is a timeout:
 // The select function returns the total number of socket handles that are ready and contained in the fd_set structures, zero if the time limit expired.

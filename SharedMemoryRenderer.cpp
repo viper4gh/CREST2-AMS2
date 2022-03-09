@@ -176,7 +176,9 @@ void renderCarState(std::stringstream& ss, const SharedMemory* sharedData) {
 	ss << tab << tab << "\"mHandBrake\":" << sharedData->mHandBrake << "," << nl;
 	ss << tab << tab << "\"mBrakeBias\":" << sharedData->mBrakeBias << "," << nl;
 	ss << tab << tab << "\"mTurboBoostPressure\":" << sharedData->mTurboBoostPressure << "," << nl;
-	ss << tab << tab << "\"mDrsState\":" << sharedData->mDrsState << nl << tab << "}";	//AMS2 v 1.3.3.0 Shared Memory v10 additional data
+	ss << tab << tab << "\"mDrsState\":" << sharedData->mDrsState << "," << nl;	//AMS2 v 1.3.3.0 Shared Memory v10 additional data
+	ss << tab << tab << "\"mAntiLockSetting\":" << sharedData->mAntiLockSetting << "," << nl;	//AMS2 v 1.3.4.0 Shared Memory v11 additional data
+	ss << tab << tab << "\"mTractionControlSetting\":" << sharedData->mTractionControlSetting << nl << tab << "}";	//AMS2 v 1.3.4.0 Shared Memory v11 additional data
 }
 
 void renderMotionDeviceRelated(std::stringstream& ss, const SharedMemory* sharedData) {
