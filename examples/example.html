@@ -1,19 +1,54 @@
 <html>
 <head>
     <script type="text/javascript">
-        function functionpCars(theUrl){
-            var request = new XMLHttpRequest();
-            request.open("GET", theUrl, false);
-            request.send(null);
+        function RequestData(URL){
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.open("GET", URL, false);
+            xmlhttp.send(null);
+			
+			if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+			
+				var myArr = JSON.parse( xmlhttp.responseText );
+				
+				// output complete Shared Memory data to browser developer console
+				console.log(myArr);
+				
+				// simple example how to access single values
+				// in this case showing Track Name, Track Variation and Current Lap Time of the Player
+				document.getElementById("data").innerHTML = 
+					"Track: " + myArr.eventInformation.mTranslatedTrackLocation + " - " + myArr.eventInformation.mTranslatedTrackVariation + 
+					"<br>Current Lap Time: " + myArr.timings.mLastLapTime +
+					"<br>Car: " + myArr.vehicleInformation.mCarName +
+					"<br>Car Class: " + myArr.vehicleInformation.mCarClassName +
+					"<br><br>Speed: " + (myArr.carState.mSpeed*3.6).toFixed(0) + " km/h" +
+					"<br>Gear: " + myArr.carState.mGear +
+					"<br>Throttle: " + (myArr.carState.mThrottle*100).toFixed(0) + " %" +
+					"<br>Brake: " + (myArr.carState.mBrake*100).toFixed(0) + " %" +
+					"<br>Clutch: " + (myArr.carState.mClutch*100).toFixed(0) + " %" +
+					"<br><br>Timestamp: " + new Date(myArr.timestamp);
+			}
 
-            var headers = request.getAllResponseHeaders().toLowerCase();
-            alert(headers);
+            //var headers = xmlhttp.getAllResponseHeaders().toLowerCase();
+            //alert(headers);
+			
         }
 
+		function AutoReload(URL,interval){
+			// rename and disable Button
+			document.getElementById('RequestAuto').innerText = "Running";
+			document.getElementById('RequestAuto').disabled = true; 
+			// call function RequestData every x milliseconds
+			setInterval("RequestData('"+URL+"')",interval);
+		}
     </script>
 </head>
 <body>
-<p><a href="#" onClick="functionpCars('http://localhost:8180/crest2/v1/api');">Request</a></p>
-
+<!-- 
+Request data from localhost, you have to open the example.html on the same system where CREST2 is running.
+If you want to open it on another system in your network you have to replace localhost by the ip address of the system where CREST2 is running, e.g. 'http://192.168.0.5:8180/crest2/v1/api'
+ -->
+<p><button id="Request" onclick="RequestData('http://localhost:8180/crest2/v1/api');">Request (once)</button>
+<button id="RequestAuto" onclick="AutoReload('http://localhost:8180/crest2/v1/api',500);">Request (Auto Reload)</button></p>
+<p id="data"></p>
 </body>
 </html>
