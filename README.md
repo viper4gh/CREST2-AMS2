@@ -20,12 +20,12 @@ If you want to see what you can do with it, then look here: [Liveview (also supp
 1. Download the zip archive from https://drive.google.com/drive/folders/1dR40S7Q-3xJhEr1C8QFEd87Hs8lpV62s and extract it, or build it yourself -> look at the topic [Building from source](#building-from-source).  
 The archive includes the following relevant files:
 ```
-CREST2.exe		- Binary
-zlibwapi.dll		- Library for data compression
-crest2.json		- Example how the browser output looks like
-crest2_formatted.json	- Example how the browser output looks like - formatted for better readability
-example.html		- Example how you can use the API in HTML
-Readme.txt		- Basic info how to use it
+CREST2.exe		        - Binary
+zlibwapi.dll		        - Library for data compression
+CREST2_Example.json		- Example how the browser output looks like
+CREST2_Example_formatted.json	- Example how the browser output looks like - formatted for better readability
+example.html		        - Example how you can use the API in HTML
+Readme.txt		        - Basic info how to use it
 ```
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;There are some [screenhots](#screenshots) below, where you can see how the outputs look like.
 
