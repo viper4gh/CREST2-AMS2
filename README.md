@@ -95,7 +95,8 @@ Changing the value seems to have no effect, but maybe someone finds a use case w
 ![Screenshot](docs/Browser_Output_formatted.jpg)  
 
 **HTML Example opened in Chrome**\
-If you open the example.html, open the developer console and click on Request, you will get some selected values in the browser window and the complete array of Shared Memory data in the developer console, where you can find all variables for use in your own code:  
+If you open the example.html, open the developer console and click on Request (once), you will get some selected values in the browser window and the complete array of Shared Memory data in the developer console, where you can find all variables for use in your own code.\
+If you click Request (Auto Reload) the data is updated every 500 ms:  
 ![Screenshot](docs/HTML_Example.jpg)
 
 
