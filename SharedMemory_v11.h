@@ -30,7 +30,7 @@
 // Header version number to test against
 enum
 {
-  SHARED_MEMORY_VERSION = 12
+  SHARED_MEMORY_VERSION = 11
 };
 
 // Maximum allowed length of string
@@ -288,17 +288,6 @@ enum DrsState
 	DRS_ACTIVE          = (1<<4),  // Wing is in activated state
 };
 
-// (Type#15) ErsDeploymentMode (to be used with 'mErsDeploymentMode')
-enum ErsDeploymentMode
-{
-  ERS_DEPLOYMENT_MODE_NONE = 0, // The vehicle does not support deployment modes
-	ERS_DEPLOYMENT_MODE_OFF, // Regen only, no deployment
-	ERS_DEPLOYMENT_MODE_BUILD, // Heavy emphasis towards regen
-	ERS_DEPLOYMENT_MODE_BALANCED, // Deployment map automatically adjusted to try and maintain target SoC
-	ERS_DEPLOYMENT_MODE_ATTACK,  // More aggressive deployment, no target SoC
-	ERS_DEPLOYMENT_MODE_QUAL, // Maximum deployment, no target Soc
-};
-
 // *** Shared Memory ***
 
 typedef struct
@@ -500,19 +489,7 @@ typedef struct
   unsigned int mDPad;               // button mask
 
   int mAntiLockSetting;             // [ UNSET = -1 ] Current ABS garage setting. Valid under player control only.
-  int mTractionControlSetting;      // [ UNSET = -1 ] Current ABS garage setting. Valid under player control only.
-
-  // ERS
-  int mErsDeploymentMode;           // [ enum (Type#15)  ErsDeploymentMode ]
-  bool mErsAutoModeEnabled;         // true if the deployment mode was selected by auto system. Valid only when mErsDeploymentMode > ERS_DEPLOYMENT_MODE_NONE
-
-	// Clutch State & Damage
-	float	mClutchTemp;                // [ UNITS = Kelvin ] [ UNSET = -273.16 ]
-	float	mClutchWear;                // [ RANGE = 0.0f->1.0f... ]
-	bool  mClutchOverheated;          // true if clutch performance is degraded due to overheating
-	bool  mClutchSlipping;            // true if clutch is slipping (can be induced by overheating or wear)
-
-
+  int mTractionControlSetting;      // [ UNSET = -1 ] Current TCS garage setting. Valid under player control only.
 
 } SharedMemory;
 

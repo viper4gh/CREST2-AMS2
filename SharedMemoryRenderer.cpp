@@ -178,7 +178,13 @@ void renderCarState(std::stringstream& ss, const SharedMemory* sharedData) {
 	ss << tab << tab << "\"mTurboBoostPressure\":" << sharedData->mTurboBoostPressure << "," << nl;
 	ss << tab << tab << "\"mDrsState\":" << sharedData->mDrsState << "," << nl;	//AMS2 v 1.3.3.0 Shared Memory v10 additional data
 	ss << tab << tab << "\"mAntiLockSetting\":" << sharedData->mAntiLockSetting << "," << nl;	//AMS2 v 1.3.4.0 Shared Memory v11 additional data
-	ss << tab << tab << "\"mTractionControlSetting\":" << sharedData->mTractionControlSetting << nl << tab << "}";	//AMS2 v 1.3.4.0 Shared Memory v11 additional data
+	ss << tab << tab << "\"mTractionControlSetting\":" << sharedData->mTractionControlSetting << "," << nl;	//AMS2 v 1.3.4.0 Shared Memory v11 additional data
+	ss << tab << tab << "\"mErsDeploymentMode\":" << sharedData->mErsDeploymentMode << "," << nl;	//AMS2 v 1.3.5.2 Shared Memory v12 additional data
+	ss << tab << tab << "\"mErsAutoModeEnabled\":" << sharedData->mErsAutoModeEnabled << "," << nl;	//AMS2 v 1.3.5.2 Shared Memory v12 additional data
+	ss << tab << tab << "\"mClutchTemp\":" << sharedData->mClutchTemp << "," << nl;	//AMS2 v 1.3.5.2 Shared Memory v12 additional data
+	ss << tab << tab << "\"mClutchWear\":" << sharedData->mClutchWear << "," << nl;	//AMS2 v 1.3.5.2 Shared Memory v12 additional data
+	ss << tab << tab << "\"mClutchOverheated\":" << sharedData->mClutchOverheated << "," << nl;	//AMS2 v 1.3.5.2 Shared Memory v12 additional data
+	ss << tab << tab << "\"mClutchSlipping\":" << sharedData->mClutchSlipping << nl << tab << "}";	//AMS2 v 1.3.5.2 Shared Memory v12 additional data
 }
 
 void renderMotionDeviceRelated(std::stringstream& ss, const SharedMemory* sharedData) {
