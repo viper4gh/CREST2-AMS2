@@ -134,7 +134,8 @@ void renderTimings(std::stringstream& ss, const SharedMemory* sharedData) {
 void renderFlags(std::stringstream& ss, const SharedMemory* sharedData) {
 	ss << tab << "\"flags\":{" << nl;
 	ss << tab << tab << "\"mHighestFlagColour\":" << sharedData->mHighestFlagColour << "," << nl;
-	ss << tab << tab << "\"mHighestFlagReason\":" << sharedData->mHighestFlagReason << nl << tab << "}";
+	ss << tab << tab << "\"mHighestFlagReason\":" << sharedData->mHighestFlagReason << "," << nl;
+	ss << tab << tab << "\"mYellowFlagState\":" << sharedData->mYellowFlagState << nl << tab << "}";
 }
 
 void renderPitInfo(std::stringstream& ss, const SharedMemory* sharedData) {
