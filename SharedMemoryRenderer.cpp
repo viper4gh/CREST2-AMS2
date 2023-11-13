@@ -20,6 +20,7 @@ void renderGameStates(std::stringstream& ss, const SharedMemory* sharedData) {
 	ss << tab << "\"gameStates\":{" << nl;
 	ss << tab << tab << "\"mGameState\":" << sharedData->mGameState << "," << nl;
 	ss << tab << tab << "\"mSessionState\":" << sharedData->mSessionState << "," << nl;
+	ss << tab << tab << "\"mSessionIsPrivate\":" << sharedData->mSessionIsPrivate << "," << nl;	//AMS2 v 1.5.3.0 Shared Memory v14 additional data
 	ss << tab << tab << "\"mRaceState\":" << sharedData->mRaceState << nl << tab << "}";
 }
 
@@ -185,7 +186,8 @@ void renderCarState(std::stringstream& ss, const SharedMemory* sharedData) {
 	ss << tab << tab << "\"mClutchTemp\":" << sharedData->mClutchTemp << "," << nl;	//AMS2 v 1.3.5.2 Shared Memory v12 additional data
 	ss << tab << tab << "\"mClutchWear\":" << sharedData->mClutchWear << "," << nl;	//AMS2 v 1.3.5.2 Shared Memory v12 additional data
 	ss << tab << tab << "\"mClutchOverheated\":" << sharedData->mClutchOverheated << "," << nl;	//AMS2 v 1.3.5.2 Shared Memory v12 additional data
-	ss << tab << tab << "\"mClutchSlipping\":" << sharedData->mClutchSlipping << nl << tab << "}";	//AMS2 v 1.3.5.2 Shared Memory v12 additional data
+	ss << tab << tab << "\"mClutchSlipping\":" << sharedData->mClutchSlipping << "," << nl;	//AMS2 v 1.3.5.2 Shared Memory v12 additional data
+	ss << tab << tab << "\"mLaunchStage\":" << sharedData->mLaunchStage << nl << tab << "}";	//AMS2 v 1.5.3.0 Shared Memory v14 additional data
 }
 
 void renderMotionDeviceRelated(std::stringstream& ss, const SharedMemory* sharedData) {
