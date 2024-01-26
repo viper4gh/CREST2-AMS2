@@ -541,7 +541,7 @@ typedef struct
   int mYellowFlagState;             // [ enum (Type#16) YellowFlagState ]
 
   bool mSessionIsPrivate;           // true if this is a private session where users cannot see or interact with other drivers (and so would not need positional awareness of them etc)
-  unsigned int mLaunchStage;        // [ enum (Type#17) LaunchStage
+  int mLaunchStage;                 // [ enum (Type#17) LaunchStage
 
 } SharedMemory;
 
